@@ -1,30 +1,32 @@
 const { Bancos, Boletos, streamToPromise } = require('../lib/index');
 
 const boleto = {
-  banco: new Bancos.BancoBrasil(),
+  banco: new Bancos.Itau(),
   pagador: {
-    nome: 'José Bonifácio de Andrada',
-    registroNacional: '12345678',
+    nome: 'Maria Teste Multa',
+    registroNacional: '406.745.360-45',
     endereco: {
-      logradouro: 'Rua Pedro Lessa, 15',
-      bairro: 'Centro',
-      cidade: 'Rio de Janeiro',
-      estadoUF: 'RJ',
-      cep: '20030-030'
+      logradouro: 'Rua GH',
+      bairro: 'São José',
+      cidade: 'Governador Valadares',
+      estadoUF: 'MG',
+      cep: '35050-320'
     }
   },
-  instrucoes: ['Após o vencimento Mora dia R$ 1,59', 'Após o vencimento, multa de 2%'],
+  instrucoes: ['Instruções de responsabilidade do BENEFICIÁRIO.'],
   beneficiario: {
     nome: 'Empresa Fictícia LTDA',
     cnpj:'43576788000191',
     dadosBancarios: {
-      carteira: '09',
-      agencia: '18455',
-      agenciaDigito: '4',
-      conta: '1277165',
-      contaDigito: '1',
-      nossoNumero: '00000000061',
-      nossoNumeroDigito: '8',
+      carteira: '157',
+      agencia: '2938',
+      agenciaDigito: '*',
+      conta: '10183',
+      contaDigito: '4',
+      nossoNumero: '80001397',
+      nossoNumeroDigito: '',
+      codigo: '26185',
+      digitoCodigoBeneficiario: '2',
       convenio: '157610183',
     },
     endereco: {
@@ -36,13 +38,13 @@ const boleto = {
     }
   },
   boleto: {
-    numeroDocumento: '1001',
+    numeroDocumento: 'ND000054/1',
     especieDocumento: 'DM',
-    valor: 110.00,
+    valor: 179.61,
     datas: {
-      vencimento: '02-04-2020',
-      processamento: '02-04-2019',
-      documentos: '02-04-2019'
+      vencimento: '05-09-2025',
+      processamento: '02-09-2025',
+      documentos: '12-08-2025'
     }
   }
 };
@@ -56,6 +58,3 @@ novoBoleto.pdfFile().then(async ({ stream }) => {
 }).catch((error) => {
   return error;
 });
-
-
-

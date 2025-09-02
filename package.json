@@ -1,6 +1,6 @@
 {
   "_from": "gerar-boletos",
-  "_id": "gerar-boletos@1.5.7",
+  "_id": "gerar-boletos@1.5.8",
   "_inBundle": false,
   "_integrity": "sha512-pzpBz1uRN++VEr6HzpLmCm5PWpCk81hzKdbOvmVwIL/h2UFcs4f/NgkCAXh4lKLXwrBNpoHMpb16qsj0/7JsgA==",
   "_location": "/gerar-boletos",
@@ -81,8 +81,9 @@
     "gerarBradesco": "node ./examples/gerar-boleto-bradesco.js",
     "gerarBrasil": "node ./examples/gerar-boleto-BancoDoBrasil.js",
     "gerarCecred": "node ./examples/gerar-boleto-cecred.js",
+    "gerarItau": "node ./examples/gerar-boleto-itau.js",
     "lint": "eslint .",
     "test": "nodeunit ./tests/*test.js && nodeunit ./tests/boleto/bancos/*test.js && nodeunit ./tests/boleto/*test.js"
   },
-  "version": "1.5.7"
+  "version": "1.5.8"
 }
