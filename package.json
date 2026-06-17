@@ -88,5 +88,5 @@
     "lint": "eslint .",
     "test": "nodeunit ./tests/*test.js && nodeunit ./tests/boleto/bancos/*test.js && nodeunit ./tests/boleto/*test.js"
   },
-  "version": "1.5.11"
+  "version": "1.5.12"
 }
