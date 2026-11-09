@@ -96,7 +96,7 @@ it('Testa geração de linha digitavel', function() {
 	var codigoDeBarras = banco.geraCodigoDeBarrasPara(boleto),
 		linhaEsperada = '23792.94909 60000.000004 03000.658009 9 81550000000100';
 
-	assert.equal(linhaEsperada, geradorDeLinhaDigitavel(codigoDeBarras, banco));
+	assert.equal(linhaEsperada, geradorDeLinhaDigitavel(codigoDeBarras));
 
 });
 

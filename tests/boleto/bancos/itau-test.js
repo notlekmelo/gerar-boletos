@@ -78,7 +78,7 @@ it('Verifica geração da linha digitável - 1', function() {
 	var codigoDeBarras = banco.geraCodigoDeBarrasPara(boleto),
 		linhaEsperada = '34191.57213 89766.660164 74514.590004 6 56550000268016';
 
-	assert.equal(linhaEsperada, geradorDeLinhaDigitavel(codigoDeBarras, banco));
+	assert.equal(linhaEsperada, geradorDeLinhaDigitavel(codigoDeBarras));
 
 });
 
@@ -112,7 +112,7 @@ it('Verifica geração da linha digitável - 2', function() {
 	var codigoDeBarras = banco.geraCodigoDeBarrasPara(boleto),
 		linhaEsperada = '34191.74002 01513.568467 20582.590004 6 60290000268016';
 
-	assert.equal(linhaEsperada, geradorDeLinhaDigitavel(codigoDeBarras, banco));
+	assert.equal(linhaEsperada, geradorDeLinhaDigitavel(codigoDeBarras));
 
 });
 
@@ -144,7 +144,7 @@ it('Verifica geração da linha digitável - 3', function() {
 
 	var codigoDeBarras = banco.geraCodigoDeBarrasPara(boleto),
 		linhaEsperada = '34191.81940 58802.140655 40871.130007 4 60700000057500',
-		linhaGerada = geradorDeLinhaDigitavel(codigoDeBarras, banco);
+		linhaGerada = geradorDeLinhaDigitavel(codigoDeBarras);
 
 	assert.equal(linhaEsperada, linhaGerada);
 
@@ -178,7 +178,7 @@ it('Verifica geração da linha digitável - 4', function() {
 
 	var codigoDeBarras = banco.geraCodigoDeBarrasPara(boleto),
 		linhaEsperada = '34191.57890 60507.420655 40871.130007 1 61030000011538',
-		linhaGerada = geradorDeLinhaDigitavel(codigoDeBarras, banco);
+		linhaGerada = geradorDeLinhaDigitavel(codigoDeBarras);
 
 	assert.equal(linhaEsperada, linhaGerada);
 
@@ -212,7 +212,7 @@ it('Verifica geração da linha digitável - 5', function() {
 
 	var codigoDeBarras = banco.geraCodigoDeBarrasPara(boleto),
 		linhaEsperada = '34191.57023 89162.080652 40871.130007 4 61680000011538',
-		linhaGerada = geradorDeLinhaDigitavel(codigoDeBarras, banco);
+		linhaGerada = geradorDeLinhaDigitavel(codigoDeBarras);
 
 	assert.equal(linhaEsperada, linhaGerada);
 
@@ -246,7 +246,7 @@ it('Verifica geração da linha digitável - 6', function() {
 
 	var codigoDeBarras = banco.geraCodigoDeBarrasPara(boleto),
 		linhaEsperada = '34191.57072 96777.740653 40871.130007 9 61980000023076',
-		linhaGerada = geradorDeLinhaDigitavel(codigoDeBarras, banco);
+		linhaGerada = geradorDeLinhaDigitavel(codigoDeBarras);
 
 	assert.equal(linhaEsperada, linhaGerada);
 

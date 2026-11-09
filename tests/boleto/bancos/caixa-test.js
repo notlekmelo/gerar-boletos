@@ -172,8 +172,8 @@ it('Linha digitavel com carteira SIGCB 1', function() {
 
 	var codigoDeBarras = banco.geraCodigoDeBarrasPara(boletoSinco),
 		linhaEsperada = '10496.48999 58000.100048 00000.000711 7 81550000015876';
-	console.log(geradorDeLinhaDigitavel(codigoDeBarras, banco));
-	assert.equal(linhaEsperada, geradorDeLinhaDigitavel(codigoDeBarras, banco));
+	console.log(geradorDeLinhaDigitavel(codigoDeBarras));
+	assert.equal(linhaEsperada, geradorDeLinhaDigitavel(codigoDeBarras));
 
 });
 
@@ -181,7 +181,7 @@ it('Linha digitavel com carteira SIGCB 2', function() {
 	var codigoDeBarras = banco.geraCodigoDeBarrasPara(boletoSicgb),
 		linhaEsperada = '10492.90271 45900.100046 00000.013292 1 81550000008000';
 
-	assert.equal(linhaEsperada, geradorDeLinhaDigitavel(codigoDeBarras, banco));
+	assert.equal(linhaEsperada, geradorDeLinhaDigitavel(codigoDeBarras));
 
 });
 
