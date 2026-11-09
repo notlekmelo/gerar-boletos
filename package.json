@@ -1,6 +1,6 @@
 {
   "_from": "gerar-boletos",
-  "_id": "gerar-boletos@1.5.12",
+  "_id": "gerar-boletos@1.6.0",
   "_inBundle": false,
   "_integrity": "sha512-pzpBz1uRN++VEr6HzpLmCm5PWpCk81hzKdbOvmVwIL/h2UFcs4f/NgkCAXh4lKLXwrBNpoHMpb16qsj0/7JsgA==",
   "_location": "/gerar-boletos",
@@ -33,17 +33,15 @@
   "bundleDependencies": false,
   "dependencies": {
     "base64-stream": "^1.0.0",
-    "moment": "^2.24.0",
-    "pdfkit": "0.17.2"
-  },
-  "overrides": {
-    "crypto-js": "npm:@empty@1.0.0"
+    "moment": "^2.31.0",
+    "pdfkit": "^0.20.2"
   },
   "deprecated": false,
   "description": "Gerar boletos para vários bancos",
   "devDependencies": {
-    "eslint": "^6.5.1",
-    "nodeunit": "0.11.3"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0"
   },
   "directories": {
     "example": "examples",
@@ -51,7 +49,7 @@
     "test": "tests"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": "^20.19.0 || ^22.13.0 || >=24"
   },
   "homepage": "https://github.com/Romulosanttos/gerar-boletos#readme",
   "keywords": [
@@ -86,7 +84,10 @@
     "gerarCecred": "node ./examples/gerar-boleto-cecred.js",
     "gerarItau": "node ./examples/gerar-boleto-itau.js",
     "lint": "eslint .",
-    "test": "nodeunit ./tests/*test.js && nodeunit ./tests/boleto/bancos/*test.js && nodeunit ./tests/boleto/*test.js"
+    "test": "node --test --test-timeout=30000 tests/*test.js tests/boleto/bancos/*test.js tests/boleto/*test.js"
   },
-  "version": "1.5.12"
+  "version": "1.6.0",
+  "overrides": {
+    "minimatch": "^11.0.5"
+  }
 }
