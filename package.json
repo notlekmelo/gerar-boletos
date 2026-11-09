@@ -86,7 +86,7 @@
     "lint": "eslint .",
     "test": "node --test --test-timeout=30000 tests/*test.js tests/boleto/bancos/*test.js tests/boleto/*test.js"
   },
-  "version": "1.5.12",
+  "version": "1.6.0",
   "overrides": {
     "minimatch": "^11.0.5"
   }
