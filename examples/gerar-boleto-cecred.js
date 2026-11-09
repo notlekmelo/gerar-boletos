@@ -1,4 +1,4 @@
-const { Bancos, Boletos, streamToPromise } = require('../lib/index');
+const { Bancos, Boletos, StreamToPromise } = require('../lib/index');
 
 const boleto = {
   banco: new Bancos.Cecred(),
@@ -50,10 +50,11 @@ const boleto = {
 const novoBoleto = new Boletos(boleto);
 novoBoleto.gerarBoleto();
 
-novoBoleto.pdfFile().then(async ({ stream }) => {
+novoBoleto.pdfFile('tmp/boletos/boleto-cecred.pdf').then(async ({ stream }) => {
   // ctx.res.set('Content-type', 'application/pdf');	
-  await streamToPromise(stream);
+  await StreamToPromise(stream);
 }).catch((error) => {
-  return error;
+  console.error(error);
+  process.exitCode = 1;
 });
 

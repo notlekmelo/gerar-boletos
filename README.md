@@ -19,13 +19,44 @@ Geração de boletos para bancos:
 - Santander
 - Banco do Brasil
 
+### Requisitos e desenvolvimento
+
+Use Node.js `^20.19.0 || ^22.13.0 || >=24` (recomendado: Node.js 24 LTS).
+A atualização do ESLint 10 exige essas versões; Node.js 10 não é mais suportado.
+
+O projeto usa npm e versiona `package-lock.json` para instalações reproduzíveis.
+O antigo `yarn.lock` foi removido para manter um único lockfile.
+
+```sh
+npm ci
+npm test
+npm run lint
+npm audit
+```
+
+Os testes usam `node:test` e `node:assert`, sem Nodeunit. PDFKit e Moment usam
+as versões estáveis atuais. `base64-stream` permanece em 1.0.0, a última estável.
+O override de `crypto-js` foi removido porque o PDFKit atual não depende dele.
+O override de `minimatch` em 11.0.5 ou superior corrige GHSA-g3hv-75wg-m249
+na árvore de desenvolvimento do ESLint; ele deve ser revisto quando o ESLint
+adotar essa versão diretamente.
+
+As funções `pdfFile` e `pdfStream` resolvem após o destino terminar de gravar e
+rejeitam em caso de erro. `StreamToPromise` (com iniciais maiúsculas) também
+aceita streams de escrita já finalizados e propaga erros. Cada geração de PDF
+usa suas próprias opções, sem reutilizar o stream de uma geração anterior.
+
+Os dados dos testes bancários foram atualizados para informar conta e dígito
+do beneficiário. Foram corrigidas a preservação dos 15 dígitos do nosso número
+da Caixa e dos 17 dígitos do Cecred, quando o banco é informado a
+`comNossoNumero`, e a validação do limite de locais de pagamento recebidos
+como array. Testes automatizados não substituem
+a homologação dos boletos com os respectivos bancos.
+
 ### Install
 
 ```javascript
 npm i gerar-boletos
-```
-```javascript
-yarn add gerar-boletos
 ```
 ### Exemplos de uso
 
